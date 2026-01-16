@@ -20,7 +20,7 @@ body {
 }
 /* Color barra de navagación*/
 .navbar {
-  background: linear-gradient(90deg, #000000 0%, #66ff66 100%) !important;
+  background: linear-gradient(90deg, #000000 0%, #808080 100%);
 }
 
 /* margin nombre en el barra de navegación*/
