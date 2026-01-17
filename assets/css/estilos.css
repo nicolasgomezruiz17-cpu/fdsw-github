@@ -191,3 +191,644 @@ button:hover::before {
   transform: translateY(-10px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
+
+/* Sección de contacto con posición relativa */
+#Contacto {
+  position: relative;
+  overflow: hidden;
+  padding: 3rem 1rem;
+}
+
+/* Fondo animado */
+.animated-background {
+  position: absolute;
+  inset: 0;
+  --c: 7px;
+  background-color: #000;
+  background-image: radial-gradient(
+      circle at 50% 50%,
+      #0000 1.5px,
+      #000 0 var(--c),
+      #0000 var(--c)
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      #0000 1.5px,
+      #000 0 var(--c),
+      #0000 var(--c)
+    ),
+    radial-gradient(circle at 50% 50%, #f00, #f000 60%),
+    radial-gradient(circle at 50% 50%, #ff0, #ff00 60%),
+    radial-gradient(circle at 50% 50%, #0f0, #0f00 60%),
+    radial-gradient(ellipse at 50% 50%, #00f, #00f0 60%);
+  background-size:
+    12px 20.7846097px,
+    12px 20.7846097px,
+    200% 200%,
+    200% 200%,
+    200% 200%,
+    200% 20.7846097px;
+  --p: 0px 0px, 6px 10.39230485px;
+  background-position:
+    var(--p),
+    0% 0%,
+    0% 0%,
+    0% 0px;
+  animation:
+    wee 40s linear infinite,
+    filt 6s linear infinite;
+  z-index: 1;
+}
+
+/* Contenido por encima del fondo */
+.contact-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Texto blanco para que se vea sobre el fondo oscuro */
+#Contacto h2,
+#Contacto p,
+#Contacto label {
+  color: white;
+}
+
+@keyframes filt {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes wee {
+  0% {
+    background-position:
+      var(--p),
+      800% 400%,
+      1000% -400%,
+      -1200% -600%,
+      400% 41.5692194px;
+  }
+  to {
+    background-position:
+      var(--p),
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      0% 0%;
+  }
+}
+
+/* Caja para el párrafo */
+.caja-texto {
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+  padding: 20px 30px;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.caja-texto p {
+  color: #333 !important; /* Texto oscuro para que se lea bien */
+  margin: 0;
+}
+
+
+/* From Uiverse.io by imtausef */ 
+.parent {
+  width: 300px;
+  padding: 20px;
+  perspective: 1000px;
+}
+
+.card-final {
+  padding-top: 50px;
+  /* border-radius: 10px; */
+  border: 3px solid #141414;
+  transform-style: preserve-3d;
+  background: linear-gradient(135deg, #0000 18.75%, #f3f3f3 0 31.25%, #0000 0),
+    repeating-linear-gradient(45deg, #f3f3f3 -6.25% 6.25%, #141414 0 18.75%);
+  background-size: 60px 60px;
+  background-position:
+    0 0,
+    0 0;
+  background-color: #141414;
+  width: 100%;
+  box-shadow: rgba(142, 142, 142, 0.3) 0px 30px 30px -10px;
+  transition: all 0.5s ease-in-out;
+}
+
+.card-final:hover {
+  background-position:
+    -100px 100px,
+    -100px 100px;
+  transform: rotate3d(0.5, 1, 0, 30deg);
+}
+
+.content-box {
+  background: #8ed500;
+  /* border-radius: 10px 100px 10px 10px; */
+  transition: all 0.5s ease-in-out;
+  padding: 60px 25px 25px 25px;
+  transform-style: preserve-3d;
+}
+
+.content-box .card-final-title {
+  display: inline-block;
+  color: #141414;
+  font-size: 25px;
+  font-weight: 900;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 50px);
+}
+
+.content-box .card-final-title:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.content-box .card-final-content {
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #141414;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 30px);
+}
+
+.content-box .card-final-content:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.content-box .see-more {
+  cursor: pointer;
+  margin-top: 1rem;
+  display: inline-block;
+  font-weight: 900;
+  font-size: 9px;
+  text-transform: uppercase;
+  color: #8ed500;
+  /* border-radius: 5px; */
+  background: #141414;
+  padding: 0.5rem 0.7rem;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 20px);
+}
+
+.content-box .see-more:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.date-box {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  height: 60px;
+  width: 60px;
+  background: #141414;
+  border: 1px solid #8ed500;
+  /* border-radius: 10px; */
+  padding: 10px;
+  transform: translate3d(0px, 0px, 80px);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 17px 10px -10px;
+}
+
+.date-box span {
+  display: block;
+  text-align: center;
+}
+
+.date-box .month {
+  color: #8ed500;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.date-box .date {
+  font-size: 20px;
+  font-weight: 900;
+  color: #8ed500;
+}
+
+/* Contenedor para centrar las cards horizontalmente */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 50px 0;
+  padding: 20px;
+}
+
+/* From Uiverse.io by imtausef */ 
+.parent {
+  width: 300px;
+  padding: 20px;
+  perspective: 1000px;
+}
+
+.card-final {
+  padding-top: 50px;
+  border: 3px solid #141414;
+  transform-style: preserve-3d;
+  background: linear-gradient(135deg, #0000 18.75%, #f3f3f3 0 31.25%, #0000 0),
+    repeating-linear-gradient(45deg, #f3f3f3 -6.25% 6.25%, #141414 0 18.75%);
+  background-size: 60px 60px;
+  background-position: 0 0, 0 0;
+  background-color: #141414;
+  width: 100%;
+  box-shadow: rgba(142, 142, 142, 0.3) 0px 30px 30px -10px;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+}
+
+.card-final:hover {
+  background-position: -100px 100px, -100px 100px;
+  transform: rotate3d(0.5, 1, 0, 30deg);
+}
+
+.content-box {
+  background: #8ed500;
+  transition: all 0.5s ease-in-out;
+  padding: 60px 25px 25px 25px;
+  transform-style: preserve-3d;
+}
+
+.content-box .card-title {
+  display: inline-block;
+  color: #141414;
+  font-size: 25px;
+  font-weight: 900;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 50px);
+}
+
+.content-box .card-title:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.content-box .card-content {
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #141414;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 30px);
+}
+
+.content-box .card-content:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.content-box .see-more {
+  cursor: pointer;
+  margin-top: 1rem;
+  display: inline-block;
+  font-weight: 900;
+  font-size: 9px;
+  text-transform: uppercase;
+  color: #8ed500;
+  background: #141414;
+  padding: 0.5rem 0.7rem;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 20px);
+}
+
+.content-box .see-more:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.date-box {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  height: 60px;
+  width: 60px;
+  background: #141414;
+  border: 1px solid #8ed500;
+  padding: 10px;
+  transform: translate3d(0px, 0px, 80px);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 17px 10px -10px;
+}
+
+.date-box span {
+  display: block;
+  text-align: center;
+}
+
+.date-box .month {
+  color: #8ed500;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.date-box .date {
+  font-size: 20px;
+  font-weight: 900;
+  color: #8ed500;
+}
+
+/* Tablets y pantallas medianas (768px - 991px) */
+@media (max-width: 991px) {
+  /* Hero Section */
+  #Hero-Section h1 {
+    font-size: 3rem;
+  }
+  
+  #Hero-Section p {
+    font-size: 1rem;
+  }
+
+  /* Carrusel */
+  #carouselExampleFade {
+    margin-bottom: 30px;
+  }
+
+  /* Botones */
+  button {
+    font-size: 15px;
+    padding: 0.7rem 1.5rem;
+  }
+
+  /* Cards de lenguajes */
+  .card-hover {
+    margin-bottom: 20px;
+  }
+
+  /* Íconos */
+  .fa-desktop,
+  .fa-person-biking,
+  .fa-earth-americas {
+    font-size: 40px;
+  }
+}
+
+/* Móviles (576px - 767px) */
+@media (max-width: 767px) {
+  /* Navbar */
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  /* Hero Section */
+  #Hero-Section {
+    text-align: center !important;
+    padding: 2rem 0;
+  }
+
+  #Hero-Section h1 {
+    font-size: 2.5rem;
+  }
+
+  #Hero-Section p {
+    font-size: 0.95rem;
+    padding: 0 15px;
+  }
+
+  #Hero-Section .col-md-7 {
+    margin: 0 auto;
+  }
+
+  /* Botones en Hero */
+  #Hero-Section button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  /* Acerca de mi */
+  #Acerca-de-mi h2 {
+    font-size: 2rem;
+  }
+
+  #Acerca-de-mi .col-md-4 {
+    margin-bottom: 30px;
+  }
+
+  /* Íconos más pequeños en móvil */
+  .fa-desktop,
+  .fa-person-biking,
+  .fa-earth-americas {
+    font-size: 35px;
+  }
+
+  /* Sección de lenguajes */
+  #Mis-trabajos {
+    padding: 2rem 1rem !important;
+  }
+
+  #Mis-trabajos h2 {
+    font-size: 1.8rem;
+  }
+
+  /* Cards de lenguajes */
+  .card-hover {
+    margin-bottom: 25px;
+  }
+
+  .image-top {
+    height: 200px !important;
+  }
+
+  /* Contacto */
+  #Contacto h2 {
+    font-size: 2rem;
+  }
+
+  .caja-texto {
+    padding: 15px 20px;
+    margin: 15px 10px;
+  }
+
+  /* Cards de contacto 3D */
+  .cards-container {
+    flex-direction: column;
+    padding: 10px;
+    gap: 20px;
+  }
+
+  .parent {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .card-final {
+    padding-top: 40px;
+  }
+
+  .content-box .card-title {
+    font-size: 20px;
+  }
+
+  /* Footer */
+  footer {
+    font-size: 0.9rem;
+  }
+}
+
+/* Móviles pequeños (menos de 576px) */
+@media (max-width: 575px) {
+  /* Hero Section */
+  #Hero-Section h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  #Hero-Section p {
+    font-size: 0.9rem;
+  }
+
+  /* Navbar */
+  .navbar-brand {
+    font-size: 1rem;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .nav-link {
+    padding: 10px 0;
+  }
+
+  /* Acerca de mi */
+  #Acerca-de-mi h2 {
+    font-size: 1.8rem;
+  }
+
+  #Acerca-de-mi h3 {
+    font-size: 1.3rem;
+  }
+
+  /* Íconos */
+  .fa-desktop,
+  .fa-person-biking,
+  .fa-earth-americas {
+    font-size: 30px;
+  }
+
+  /* Lenguajes */
+  #Mis-trabajos h2 {
+    font-size: 1.5rem;
+  }
+
+  .align {
+    padding: 10px;
+    gap: 6px;
+  }
+
+  .align span {
+    width: 10px;
+    height: 10px;
+  }
+
+  /* Contacto */
+  #Contacto h2 {
+    font-size: 1.8rem;
+  }
+
+  .caja-texto {
+    padding: 12px 15px;
+  }
+
+  .caja-texto p {
+    font-size: 0.9rem;
+  }
+
+  /* Cards 3D de contacto */
+  .parent {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .content-box {
+    padding: 40px 20px 20px 20px;
+  }
+
+  .content-box .card-title {
+    font-size: 18px;
+  }
+
+  .content-box .card-content {
+    font-size: 11px;
+  }
+
+  .date-box {
+    width: 50px;
+    height: 50px;
+    top: 20px;
+    right: 20px;
+  }
+
+  .date-box .date {
+    font-size: 16px;
+  }
+
+  /* Botones */
+  button {
+    font-size: 14px;
+    padding: 0.6rem 1.2rem;
+  }
+
+  /* Formulario de contacto */
+  #Contacto form {
+    padding: 0 10px;
+  }
+}
+
+/* Pantallas muy pequeñas (menos de 400px) */
+@media (max-width: 399px) {
+  #Hero-Section h1 {
+    font-size: 1.7rem;
+  }
+
+  .navbar-brand {
+    font-size: 0.9rem;
+  }
+
+  #Acerca-de-mi h2,
+  #Contacto h2 {
+    font-size: 1.5rem;
+  }
+
+  #Mis-trabajos h2 {
+    font-size: 1.3rem;
+  }
+
+  .content-box .card-title {
+    font-size: 16px;
+  }
+}
+
+/* Ajustes para el carrusel en móvil */
+@media (max-width: 767px) {
+  .carousel-item img {
+    height: 300px;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 575px) {
+  .carousel-item img {
+    height: 250px;
+    object-fit: cover;
+  }
+}
+
+/* Asegurar que las imágenes sean responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ajustar el padding del container en móviles */
+@media (max-width: 767px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
